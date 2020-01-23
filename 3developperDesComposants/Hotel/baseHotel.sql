@@ -65,18 +65,3 @@ USE hotel;
 #INNER JOIN `station` ON `station`.`sta_id` = `hotel`.`hot_sta_id`)
 #GROUP BY `hotel`.`hot_sta_id`
 #HAVING `Nombre de Chambres` > 1;
-
-#16 :
-SELECT hot_nom, COUNT(`chambre`.`cha_id`)
-
-
-HAVING `res_cli_id` = (SELECT cli_nom FROM ();
-#SELECT `station`.`sta_nom` AS `Nom de la Station`, `hotel`.`hot_nom` AS `Nom de l'Hôtel`, COUNT(`chambre`.`cha_id`) AS `Nombre de Chambres`
-#FROM ((`hotel` INNER JOIN `chambre` ON `chambre`.`cha_hot_id` = `hotel`.`hot_id`)
-#INNER JOIN `station` ON `station`.`sta_id` = `hotel`.`hot_sta_id`)
-#GROUP BY `hotel`.`hot_sta_id`
-#HAVING `Nombre de Chambres` > 1;
-
-#17 :
-#SELECT nom FROM employe
-#WHERE nom LIKE '__u';

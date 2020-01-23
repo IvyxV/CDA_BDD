@@ -1,5 +1,6 @@
 USE papyrus;
 
+# INSERT INTO --> Dans la table `produit` insérer par rapport au colonne entre parenthese (dans l'ordre des parentheses) Les Données apres VALUES
 INSERT INTO `produit` (`CODART`,`LIBART`,`UNIMES`,`STKALE`,`STKPHY`,`QTEANN`)
 VALUES ('B001','Bande magnétique 1200','unité','20','87','240'),
 ('B002','Bande magnétique 6250','unite','20','12','410'),
@@ -26,6 +27,7 @@ VALUES ('00120', 'GROBRIGAN', '20 rue du papier', '92200', 'Papercity', 'Georges
 ('09180', 'HURRYTAPE', '68 boulevard des octets', '04044', 'Dumpville', 'Track', NULL);
 
 INSERT INTO `entcom` (`NUMCOM`,`OBSCOM`,`DATCOM`,`NUMFOU`)
+# NULL --> Champs vide
 VALUES ('70010', NULL, '2007-02-10', '00120'),
 ('70011', 'Commande urgente', '2007-03-01', '00540'),
 ('70020', NULL, '2007-04-25', '09180'),
