@@ -21,13 +21,13 @@ VALUES ('B001','Bande magnétique 1200','unité','20','87','240'),
 INSERT INTO `fournis` (`NUMFOU`,`CONFOU`,`RUEFOU`,`POSFOU`,`VILFOU`,`NOMFOU`,`SATISF`)
 VALUES ('00120', 'GROBRIGAN', '20 rue du papier', '92200', 'Papercity', 'Georges', '08'),
 ('00540', 'ECLIPSE', '53 rue laisse flotter les rubans', '78250', 'Bugbugville', 'Nestor', '07'),
+# NULL --> Champs vide
 ('08700', 'MEDICIS', '120 rue des plantes', '75014', 'Paris', 'Lison', NULL),
 ('09120', 'DISCOBOL', '11 rue des sports', '85100', 'La Roche sur Yon', 'Hercule', '08'),
 ('09150', 'DEPANPAP', '26 avenue des locomotives', '59987', 'Coroncountry', 'Pollux', '05'),
 ('09180', 'HURRYTAPE', '68 boulevard des octets', '04044', 'Dumpville', 'Track', NULL);
 
 INSERT INTO `entcom` (`NUMCOM`,`OBSCOM`,`DATCOM`,`NUMFOU`)
-# NULL --> Champs vide
 VALUES ('70010', NULL, '2007-02-10', '00120'),
 ('70011', 'Commande urgente', '2007-03-01', '00540'),
 ('70020', NULL, '2007-04-25', '09180'),

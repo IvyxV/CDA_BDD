@@ -1,0 +1,1 @@
+SHOW CREATE PROCEDURE Lst_fournis;

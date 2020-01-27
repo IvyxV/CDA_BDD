@@ -5,7 +5,7 @@ USE commerce;
 
 DROP TABLE IF EXISTS `Client`;
 CREATE TABLE IF NOT EXISTS `Client`(
-cli_num INT,
+cli_num INT NOT NULL AUTO_INCREMENT,
 cli_nom VARCHAR(50),
 cli_adresse VARCHAR(50),
 clit_tel VARCHAR(50),
@@ -14,17 +14,17 @@ PRIMARY KEY(cli_num)
 
 DROP TABLE IF EXISTS `Commande`;
 CREATE TABLE IF NOT EXISTS `Commande`(
-com_num INT,
+com_num INT NOT NULL AUTO_INCREMENT,
 cli_num INT NOT NULL,
 com_date DATETIME,
 ccom_obs VARCHAR(50),
 PRIMARY KEY(com_num),
-FOREIGN KEY(cli_num) REFERENCES `Client`(cli_num)
+FOREIGN KEY(cli_num) REFERENCES `Client`(cli_num) 
 );
 
 DROP TABLE IF EXISTS `Produit`;
 CREATE TABLE IF NOT EXISTS `Produit`(
-pro_num INT,
+pro_num INT NOT NULL AUTO_INCREMENT,
 pro_libelle VARCHAR(50),
 pro_description VARCHAR(50),
 PRIMARY KEY(pro_num)
@@ -40,5 +40,5 @@ FOREIGN KEY(com_num) REFERENCES `Client`(cli_num),
 FOREIGN KEY(pro_num) REFERENCES `Produit`(pro_num)
 );
 
-CREATE INDEX ID_cli_num
-ON `Client` (cli_num);
+CREATE INDEX ID_cli_nom
+ON `Client` (cli_nom);

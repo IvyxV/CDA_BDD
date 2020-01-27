@@ -1,0 +1,9 @@
+USE papyrus;
+
+
+CREATE OR REPLACE VIEW v_VentesI100Grobrigan 
+AS
+SELECT * FROM Vente
+WHERE CODART = 'I100' && NUMFOU = 120;
+
+SELECT * FROM v_VentesI100Grobrigan;
