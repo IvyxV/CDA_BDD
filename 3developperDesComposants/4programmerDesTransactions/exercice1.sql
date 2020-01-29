@@ -1,14 +1,18 @@
-USE exemple;
+#Exercice 1 :
+#modif_reservation : interdire la modification des réservations (on autorise l'ajout et la suppression). 
+
+ALTER TABLE reservation ENGINE=INNODB;
+
+DROP TRIGGER IF EXISTS modif_reservation ON TABLE reservation;
 
 DELIMITER |
-CREATE TRIGGER maj_total AFTER INSERT ON lignedecommande
-    FOR EACH ROW
-    BEGIN
-        DECLARE id_c INT;
-        DECLARE tot DOUBLE;
-        SET id_c = NEW.id_commande; -- nous captons le numéro de commande concerné
-        SET tot = (SELECT sum(prix*quantite) FROM lignedecommande WHERE id_commande=id_c); -- on recalcul le total
-        UPDATE commande SET total=tot WHERE id=id_c; -- on stocke le total dans la table commande
+CREATE TRIGGER modif_reservation AFTER UPDATE ON reservation
+FOR EACH ROW
+	BEGIN
+			SIGNAL SQLSTATE '40000' SET MESSAGE_TEXT = 'Modification de réservation interdite !';
 END |
 
 DELIMITER ;
+
+#Test update : 
+UPDATE reservation SET res_arrhes = 9 WHERE res_id = 1;
